@@ -1,7 +1,7 @@
 require "dependabot/omnibus"
 
 package_manager = "nuget"
-repo = "YOUR_ORG/YOUR_PROJECT/_git/YOUR_REPO"
+repo = "coultard/Coultard.BetBot/_git/Coultard.BetBot.Worker.Common"
 
 credentials = [{
   "type" => "git_source",
@@ -10,7 +10,7 @@ credentials = [{
   "password" => ENV["SYSTEM_ACCESSTOKEN"]
 },{
   "type" => "nuget_feed",
-  "url" => "https://pkgs.dev.azure.com/YOUR_ORG/_packaging/YOUR_FEED/nuget/v3/index.json",
+  "url" => "https://pkgs.dev.azure.com/coultard/_packaging/coultard-nuget/nuget/v3/index.json",
   "token" => ":#{ENV["SYSTEM_ACCESSTOKEN"]}"
 }]
 
@@ -82,7 +82,7 @@ dependencies.select(&:top_level?).each do |dep|
     credentials: credentials,
     label_language: true,
     author_details: {
-      email: "dependabot@YOUR_DOMAIN",
+      email: "dependabot@coultard.com",
       name: "dependabot"
     },
   )
